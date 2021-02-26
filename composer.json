@@ -1,0 +1,25 @@
+{
+  "name": "mistralys/vies-vat-service",
+  "description": "Fetches data on a VAT number, and returns it as JSON.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sebastian Mordziol",
+      "email": "s.mordziol@mistralys.eu"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src"
+    ]
+  },
+  "require": {
+    "dragonbe/vies": "2.1.14",
+    "mistralys/application-utils": ">=1.3.1",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": ">=9.5.2"
+  }
+}
