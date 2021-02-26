@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         bootstrap="tests/bootstrap.php">
+    <testsuites>
+        <testsuite name="ServeJSON">
+            <directory suffix=".php">./tests/testsuites/ServeJSON</directory>
+        </testsuite>
+        <testsuite name="VAT Tests">
+            <directory suffix=".php">./tests/testsuites/VATIDs</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
