@@ -82,8 +82,8 @@ class ServiceResult
                 'valid' => $this->response->isValid(),
                 'identifier' => $this->response->getIdentifier(),
                 'date' => $this->response->getRequestDate()->format(\DateTimeInterface::ISO8601),
-                'companyName' => $this->response->getName(),
-                'companyAddress' => $this->response->getAddress(),
+                'companyName' => trim($this->response->getName(), '-'),
+                'companyAddress' => trim($this->response->getAddress(), '-'),
             ),
             'requester' => $this->vat->getRequester()->toArray(),
             'requesterMatch' => array(
