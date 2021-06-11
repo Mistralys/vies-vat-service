@@ -53,9 +53,15 @@ class Service
      */
     public function check(VatID $target) : ServiceResult
     {
-        if(!$this->vies->getHeartBeat()->isAlive()) {
+        $heartBeat = $this->vies->getHeartBeat();
+
+        if(!$heartBeat->isAlive()) {
             throw new Exception(
-                'VIES service is not available.',
+                sprintf(
+                    'VIES service is not available: it seems to be offline, no heartbeat detected on host %1$s:%2$s.',
+                    $heartBeat->getHost(),
+                    $heartBeat->getPort()
+                ),
                 self::ERROR_VIES_SERVICE_OFFLINE
             );
         }

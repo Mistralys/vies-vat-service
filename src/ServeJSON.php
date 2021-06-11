@@ -126,7 +126,12 @@ class ServeJSON
         }
         catch (Exception $e)
         {
-            $this->validation->makeError('Exception thrown: '.$e->getMessage(), $e->getCode());
+            $this->validation->makeError(sprintf(
+                'Exception of type [%1$s] thrown. Code: [%2$s] Message: [%3$s]',
+                get_class($e),
+                $e->getCode(),
+                $e->getMessage()
+            ));
         }
     }
 }
